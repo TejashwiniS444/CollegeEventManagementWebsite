@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 });
 
+//comments
 let registrations = []; // Store all registered users in memory
 
 app.post("/api/register", (req, res) => {
@@ -23,4 +24,7 @@ app.post("/api/register", (req, res) => {
 app.get("/api/registrations", (req, res) => {
     res.json(registrations); // Send all registered users
 });
+
+
+
 
