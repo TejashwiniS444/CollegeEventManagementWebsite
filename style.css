@@ -1,0 +1,42 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+nav a {
+    margin: 0 15px;
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+#events {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+#eventList {
+    list-style: none;
+    padding: 0;
+}
+
+#eventList li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
