@@ -1,0 +1,49 @@
+<!-- register.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register for Event</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Event Registration</h1>
+        <nav>
+            <a href="index.html">Home</a>
+        </nav>
+    </header>
+
+    <main>
+        <form id="registrationForm">
+            <label>Name: <input type="text" name="name" required></label><br>
+            <label>Email: <input type="email" name="email" required></label><br>
+            <label>Event:
+                <select name="event">
+                    <option value="Tech Fest">Tech Fest</option>
+                    <option value="Cultural Day">Cultural Day</option>
+                </select>
+            </label><br>
+            <button type="submit">Register</button>
+        </form>
+        <div id="status"></div>
+    </main>
+
+    <script>
+    document.getElementById("registrationForm").addEventListener("submit", async function(e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+        const data = Object.fromEntries(formData);
+        const res = await fetch("/api/register", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+        });
+        const result = await res.json();
+        document.getElementById("status").textContent = result.status;
+    });
+    </script>
+</body>
+</html>
+
