@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(res => res.json())
         .then(data => {
             const eventList = document.getElementById("eventList");
-            data.forEach(event => {
+                data.forEach(event => {
                 const li = document.createElement("li");
                 li.textContent = `${event.name} - ${event.date}`;
                 eventList.appendChild(li);
@@ -23,3 +23,4 @@ app.post("/api/register", (req, res) => {
 app.get("/api/registrations", (req, res) => {
     res.json(registrations); // Send all registered users
 });
+
