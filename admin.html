@@ -6,6 +6,20 @@
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    fetch("/api/registrations")
+      .then(res => res.json())
+      .then(users => {
+        const list = document.getElementById("userList");
+        users.forEach(user => {
+          const li = document.createElement("li");
+          li.textContent = `${user.name} (${user.email}) - ${user.event}`;
+          list.appendChild(li);
+        });
+      });
+  });
+</script>
 <body>
     <header>
         <h1>Admin Dashboard</h1>
