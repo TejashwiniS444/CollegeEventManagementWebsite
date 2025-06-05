@@ -40,3 +40,14 @@ main {
     border-bottom: 1px solid #ccc;
 }
 
+#userList {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    list-style-type: none;
+}
+
+#userList li {
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+}
