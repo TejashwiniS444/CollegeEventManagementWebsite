@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
@@ -22,34 +22,37 @@
 </script>
 
 <body>
-    <header>
-        <h1>Admin Dashboard</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="register.html">Register</a>
-        </nav>
-    </header>
+  <header>
+    <h1>Admin Dashboard</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="register.html">Register</a>
+    </nav>
+  </header>
 
-    <main>
-        <section>
-            <h2>All Registered Users</h2>
-            <ul id="userList"></ul>
-        </section>
-    <main>
 
-    <script>
+
+  <main>
+    <section>
+      <h2>All Registered Users</h2>
+      <ul id="userList"></ul>
+    </section>
+  </main>
+
+
+  <script>
     document.addEventListener("DOMContentLoaded", () => {
-        fetch("/api/registrations")
-            .then(res => res.json())
-            .then(users => {
-                const list = document.getElementById("userList");
-                users.forEach(user => {
-                    const li = document.createElement("li");
-                    li.textContent = ${user.name} (${user.email}) - ${user.event};
-                    list.appendChild(li);
-                });
-            });
+      fetch("/api/registrations")
+        .then((res) => res.json())
+        .then((users) => {
+          const list = document.getElementById("userList");
+          users.forEach((user) => {
+            const li = document.createElement("li");
+            li.textContent = `${user.name} (${user.email}) - ${user.event}`;
+            list.appendChild(li);
+          });
+        });
     });
-    </script>
+  </script>
 </body>
 </html>
