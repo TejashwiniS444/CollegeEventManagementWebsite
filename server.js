@@ -12,3 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 });
 
+// Assuming existing 'registrations' array and POST /api/register route already exist
+
+app.get("/api/registrations", (req, res) => {
+  res.json(registrations);
+});
+
